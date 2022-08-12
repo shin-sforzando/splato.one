@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "reveal": "git secret reveal",
+    "hide": "git secret hide",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --fix --dir src",
+    "prettier": "prettier --write './**/*.{js,jsx,ts,tsx,json}'",
+    "stylelint": "stylelint --fix './**/*.{css,scss,sass}'",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.2.5",
@@ -17,8 +22,19 @@
     "@types/node": "18.7.2",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.8",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "stylelint": "^14.10.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^27.0.0",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.7.4"
   }
 }

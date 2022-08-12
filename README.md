@@ -19,9 +19,11 @@ A service to record your Splatoon&reg;3 battles.
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Setup](#setup)
+    - [Reveal secrets](#reveal-secrets)
   - [Develop](#develop)
   - [Test](#test)
   - [Document](#document)
+    - [CHANGELOG.md](#changelogmd)
   - [Deploy](#deploy)
 - [Misc](#misc)
   - [Notes](#notes)
@@ -32,12 +34,21 @@ A service to record your Splatoon&reg;3 battles.
 
 - Node.js
   - Next.js
+  - ESLint
+  - Prettier
+  - Stylelint
+- Tailwind CSS v3+
+- [git-secret](https://git-secret.io)
 
 ## How to
 
 ### Setup
 
-(T. B. D.)
+#### Reveal secrets
+
+To reveal secret files, `yarn reveal`.
+
+To hide secret files,  `yarn hide`.
 
 ### Develop
 
@@ -49,7 +60,9 @@ A service to record your Splatoon&reg;3 battles.
 
 ### Document
 
-(T. B. D.)
+#### CHANGELOG.md
+
+To update CHANGELOG.md, `git cliff --unreleased --output CHANGELOG.md`.
 
 ### Deploy
 
