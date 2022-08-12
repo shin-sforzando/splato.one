@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint --fix --dir src",
     "prettier": "prettier --write './**/*.{js,jsx,ts,tsx,json}'",
-    "stylelint": "stylelint --fix './**/*.{css,scss,sass}'"
+    "stylelint": "stylelint --fix './**/*.{css,scss,sass}'",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.2.5",
@@ -23,6 +24,8 @@
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
