@@ -1,6 +1,8 @@
 name: Feat Form (機能追加; Form ver.)
 description: Suggest an idea for this project
 title: "feat: <title>"
+assignees:
+  - shin-sforzando
 labels: ["enhancement"]
 body:
   - type: textarea

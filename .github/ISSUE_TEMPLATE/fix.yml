@@ -1,6 +1,8 @@
 name: Fix Form (不具合報告; Form ver.)
 description: Create a report to help us improve
 title: "fix: <title>"
+assignees:
+  - shin-sforzando
 labels: ["bug"]
 body:
 - type: textarea
