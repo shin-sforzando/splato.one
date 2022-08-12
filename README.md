@@ -34,6 +34,7 @@ A service to record your Splatoon&reg;3 battles.
 
 - Node.js
   - Next.js
+    - [next-axiom](https://github.com/axiomhq/next-axiom) as **Logger**
   - ESLint
   - Prettier
   - Stylelint
