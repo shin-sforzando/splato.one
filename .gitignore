@@ -280,3 +280,8 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,osx,node,yarn,nextjs,visualstudiocode,vercel,data
 ### Project Specific ###
+
+
+### Git Secret ###
+.gitsecret/keys/random_seed
+!*.secret

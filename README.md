@@ -19,6 +19,7 @@ A service to record your Splatoon&reg;3 battles.
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Setup](#setup)
+    - [Reveal secrets](#reveal-secrets)
   - [Develop](#develop)
   - [Test](#test)
   - [Document](#document)
@@ -32,12 +33,21 @@ A service to record your Splatoon&reg;3 battles.
 
 - Node.js
   - Next.js
+  - ESLint
+  - Prettier
+  - Stylelint
+- Tailwind CSS v3+
+- [git-secret](https://git-secret.io)
 
 ## How to
 
 ### Setup
 
-(T. B. D.)
+#### Reveal secrets
+
+To reveal secret files, run `yarn reveal`.
+
+Remember to run `yarn hide` if secret files have been rewritten.
 
 ### Develop
 
