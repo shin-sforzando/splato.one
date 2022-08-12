@@ -23,6 +23,7 @@ A service to record your Splatoon&reg;3 battles.
   - [Develop](#develop)
   - [Test](#test)
   - [Document](#document)
+    - [CHANGELOG.md](#changelogmd)
   - [Deploy](#deploy)
 - [Misc](#misc)
   - [Notes](#notes)
@@ -45,9 +46,9 @@ A service to record your Splatoon&reg;3 battles.
 
 #### Reveal secrets
 
-To reveal secret files, run `yarn reveal`.
+To reveal secret files, `yarn reveal`.
 
-Remember to run `yarn hide` if secret files have been rewritten.
+To hide secret files,  `yarn hide`.
 
 ### Develop
 
@@ -59,7 +60,9 @@ Remember to run `yarn hide` if secret files have been rewritten.
 
 ### Document
 
-(T. B. D.)
+#### CHANGELOG.md
+
+To update CHANGELOG.md, `git cliff --unreleased --output CHANGELOG.md`.
 
 ### Deploy
 
