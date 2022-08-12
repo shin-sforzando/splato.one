@@ -8,9 +8,11 @@
 
 <!-- Screenshots -->
 
+![Splatoon3](https://user-images.githubusercontent.com/32637762/184409319-825268ca-bedc-4a69-929f-a55ee2ebc06d.png)
+
 <!-- Synopsis -->
 
-A service to record your Splatoon&reg; 3 battles.
+A service to record your Splatoon&reg;3 battles.
 
 <!-- TOC -->
 
