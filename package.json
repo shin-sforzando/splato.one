@@ -15,7 +15,6 @@
     "test:jest": "jest --updateSnapshot",
     "test:watch": "jest --watchAll",
     "test:e2e": "playwright test",
-    "postinstall": "npx playwright install --with-deps",
     "prepare": "husky install"
   },
   "dependencies": {
