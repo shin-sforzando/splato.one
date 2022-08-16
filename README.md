@@ -3,6 +3,7 @@
 <!-- Badges -->
 
 [![Last Commit](https://img.shields.io/github/last-commit/shin-sforzando/splato.one)](https://github.com/shin-sforzando/splato.one/graphs/commit-activity)
+[![CI](https://github.com/shin-sforzando/splato.one/actions/workflows/ci.yml/badge.svg)](https://github.com/shin-sforzando/splato.one/actions/workflows/ci.yml)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -38,10 +39,41 @@ A service to record your Splatoon&reg;3 battles.
   - ESLint
   - Prettier
   - Stylelint
+  - Jest
 - Tailwind CSS v3+
 - [git-secret](https://git-secret.io)
 
 ## How to
+
+```shell
+$ yarn run
+yarn run v1.22.19
+info Commands available from binary scripts: acorn, autoprefixer, browserslist, browserslist-lint, cssesc, detective, escodegen, esgenerate, eslint, eslint-config-prettier, esparse, esvalidate, husky, import-local-fixture, jest, js-yaml, jsesc, json5, lint-staged, loose-envify, lz-string, nanoid, next, parser, pidtree, prettier, resolve, rimraf, semver, stylelint, stylelint-config-prettier, stylelint-config-prettier-check, tailwind, tailwindcss, tsc, tsserver, which
+info Project commands
+   - build
+      next build
+   - dev
+      next dev
+   - hide
+      git secret hide
+   - lint
+      next lint --fix --dir src
+   - prepare
+      husky install
+   - prettier
+      prettier --write './**/*.{js,jsx,ts,tsx,json}'
+   - reveal
+      git secret reveal
+   - start
+      next start
+   - stylelint
+      stylelint --fix './**/*.{css,scss,sass}'
+   - test
+      jest
+   - test:watch
+      jest --watchAll
+Which command would you like to run?:
+```
 
 ### Setup
 
