@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-links',
     'storybook-addon-next',
+    'storybook-addon-performance/register',
     'storybook-dark-mode',
   ],
   staticDirs: ['../public'],
