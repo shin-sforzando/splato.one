@@ -22,7 +22,10 @@ jobs:
           node-version: ${{ matrix.version }}
           cache: 'yarn'
       - name: Install Japanese font
-        run: sudo apt install fonts-noto
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: fonts-noto
+          version: 1.0
       - name: Install dependencies
         run: PLAYWRIGHT_BROWSERS_PATH=0 yarn install
       - name: Install Playwright
@@ -34,8 +37,7 @@ jobs:
       - name: Upload test results
         uses: actions/upload-artifact@v2
         with:
-          name: playwright-report
+          name: playwright-results
           path: |
             __tests__/e2e/test-results
-            playwright-report
           retention-days: 7
