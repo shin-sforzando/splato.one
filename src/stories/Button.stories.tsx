@@ -1,4 +1,6 @@
+import { expect } from '@storybook/jest'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import React from 'react'
 
 import { Button } from './Button'
@@ -38,4 +40,10 @@ export const Small = Template.bind({})
 Small.args = {
   size: 'small',
   label: 'Button',
+}
+
+Small.play = async ({ args, canvasElement }) => {
+  const canvas = within(canvasElement)
+  await userEvent.click(canvas.getByRole('button'))
+  await expect(args.onClick).toHaveBeenCalled()
 }

@@ -41,6 +41,7 @@ A service to record your Splatoon&reg;3 battles.
   - Stylelint
   - Jest
   - Playwright
+  - Storybook
 - Tailwind CSS v3+
 - [git-secret](https://git-secret.io)
 
