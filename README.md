@@ -48,7 +48,7 @@ A service to record your Splatoon&reg;3 battles.
 ```shell
 $ yarn run
 yarn run v1.22.19
-info Commands available from binary scripts: acorn, autoprefixer, browserslist, browserslist-lint, cssesc, detective, escodegen, esgenerate, eslint, eslint-config-prettier, esparse, esvalidate, husky, import-local-fixture, jest, js-yaml, jsesc, json5, lint-staged, loose-envify, lz-string, nanoid, next, parser, pidtree, prettier, resolve, rimraf, semver, stylelint, stylelint-config-prettier, stylelint-config-prettier-check, tailwind, tailwindcss, tsc, tsserver, which
+info Commands available from binary scripts: acorn, autoprefixer, browserslist, browserslist-lint, color-support, cssesc, detective, edge-runtime, esbuild, escodegen, esgenerate, eslint, eslint-config-prettier, esparse, esvalidate, husky, import-local-fixture, is-ci, jest, js-yaml, jsesc, json5, lint-staged, loose-envify, lz-string, mkdirp, nanoid, next, nft, node-gyp-build, node-gyp-build-optional, node-gyp-build-test, node-pre-gyp, nopt, parser, pidtree, playwright, prettier, rc, resolve, rimraf, semver, stylelint, stylelint-config-prettier, stylelint-config-prettier-check, tailwind, tailwindcss, ts-node, ts-node-script, ts-node-transpile-only, ts-script, tsc, tsserver, vc, vercel, which
 info Project commands
    - build
       next build
@@ -69,7 +69,11 @@ info Project commands
    - stylelint
       stylelint --fix './**/*.{css,scss,sass}'
    - test
-      jest
+      yarn test:jest && yarn test:e2e
+   - test:e2e
+      playwright test
+   - test:jest
+      jest --updateSnapshot
    - test:watch
       jest --watchAll
 Which command would you like to run?:
