@@ -1,13 +1,22 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:import/recommended", "plugin:import/warnings", "prettier"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:import/recommended",
+    "plugin:import/warnings",
+    "plugin:tailwindcss/recommended",
+    "plugin:storybook/recommended",
+    "prettier"
+  ],
+  "plugins": ["simple-import-sort", "import", "tailwindcss"],
   "rules": {
-    "import/order": [
-      "error",
-      {
-        "alphabetize": {
-          "order": "asc"
-        }
-      }
-    ]
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error"
   }
 }

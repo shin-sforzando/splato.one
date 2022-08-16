@@ -6,6 +6,8 @@
       {
         "ignoreAtRules": ["tailwind", "layer", "apply"]
       }
-    ]
+    ],
+    "selector-class-pattern": null,
+    "string-quotes": "single"
   }
 }
