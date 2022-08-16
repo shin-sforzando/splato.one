@@ -9,7 +9,6 @@ const baseURL = `http://localhost:${PORT}`
 
 const testDir = path.join(__dirname, '__tests__', 'e2e')
 const outputDir = path.join(testDir, 'test-results')
-const reportDir = path.join(testDir, 'test-reports')
 
 // Reference: https://playwright.dev/docs/test-configuration
 const config: PlaywrightTestConfig = {
@@ -33,7 +32,7 @@ const config: PlaywrightTestConfig = {
     reuseExistingServer: !process.env.CI,
   },
 
-  reporter: process.env.CI ? 'github' : [['html', { open: 'never', outputFolder: reportDir }]],
+  reporter: process.env.CI ? 'github' : [['html', { open: 'never' }]],
 
   use: {
     // Use baseURL so to make navigation relative.

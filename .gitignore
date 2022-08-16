@@ -282,7 +282,8 @@ dist
 ### Project Specific ###
 # Playwright
 __tests__/e2e/test-results/
-__tests__/e2e/test-reports/
+playwright-report
+
 
 ### Git Secret ###
 .gitsecret/keys/random_seed

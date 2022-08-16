@@ -35,5 +35,5 @@ jobs:
           name: playwright-report
           path: |
             __tests__/e2e/test-results/
-            __tests__/e2e/test-reports/
+            playwright-report/
           retention-days: 7
