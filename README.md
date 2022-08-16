@@ -3,6 +3,7 @@
 <!-- Badges -->
 
 [![Last Commit](https://img.shields.io/github/last-commit/shin-sforzando/splato.one)](https://github.com/shin-sforzando/splato.one/graphs/commit-activity)
+[![CI](https://github.com/shin-sforzando/splato.one/actions/workflows/ci.yml/badge.svg)](https://github.com/shin-sforzando/splato.one/actions/workflows/ci.yml)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -38,10 +39,44 @@ A service to record your Splatoon&reg;3 battles.
   - ESLint
   - Prettier
   - Stylelint
+  - Jest
+  - Playwright
 - Tailwind CSS v3+
 - [git-secret](https://git-secret.io)
 
 ## How to
+
+```shell
+$ yarn run
+<snip>
+info Project commands
+   - build
+      next build
+   - dev
+      next dev
+   - hide
+      git secret hide
+   - lint
+      next lint --fix --dir src
+   - prepare
+      husky install
+   - prettier
+      prettier --write './**/*.{js,jsx,ts,tsx,json}'
+   - reveal
+      git secret reveal
+   - start
+      next start
+   - stylelint
+      stylelint --fix './**/*.{css,scss,sass}'
+   - test
+      yarn test:jest && yarn test:e2e
+   - test:e2e
+      playwright test
+   - test:jest
+      jest --updateSnapshot
+   - test:watch
+      jest --watchAll
+```
 
 ### Setup
 

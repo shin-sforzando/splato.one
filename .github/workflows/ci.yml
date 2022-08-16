@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 16, 18 ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.version }}
+          cache: 'yarn'
+      - name: Install Japanese font
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: fonts-noto
+          version: 1.0
+      - name: Install dependencies
+        run: PLAYWRIGHT_BROWSERS_PATH=0 yarn install
+      - name: Install Playwright
+        run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps
+      - name: Test using Jest
+        run: yarn test:jest
+      - name: Test using Playwright
+        run: PLAYWRIGHT_BROWSERS_PATH=0 yarn test:e2e
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: playwright-results
+          path: |
+            __tests__/e2e/test-results
+          retention-days: 7
