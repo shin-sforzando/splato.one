@@ -22,7 +22,9 @@ jobs:
           node-version: ${{ matrix.version }}
           cache: 'yarn'
       - name: Install dependencies
-        run: PLAYWRIGHT_BROWSERS_PATH=0 yarn install
+        run: yarn install
+      - name: Install Playwright
+        run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps
       - name: Test
         run: yarn test
       - name: Upload test results
