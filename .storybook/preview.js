@@ -13,4 +13,15 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  html: {
+    highlighter: {
+      showLineNumbers: true, // default: false
+      wrapLines: false, // default: true
+    },
+    prettier: {
+      tabWidth: 2,
+      useTabs: false,
+      htmlWhitespaceSensitivity: 'strict',
+    },
+  },
 }

@@ -8,6 +8,7 @@ module.exports = {
     'storybook-addon-next',
     'storybook-addon-performance/register',
     'storybook-dark-mode',
+    '@whitespace/storybook-addon-html',
   ],
   staticDirs: ['../public'],
   framework: '@storybook/react',
