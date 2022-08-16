@@ -23,8 +23,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: PLAYWRIGHT_BROWSERS_PATH=0 yarn install
-      # - name: Install Playwright
-      #   run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps
+      - name: Install Playwright
+        run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps
       - name: Test using Jest
         run: yarn test:jest
       - name: Test using Playwright
