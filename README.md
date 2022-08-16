@@ -23,6 +23,7 @@ A service to record your Splatoon&reg;3 battles.
     - [Reveal secrets](#reveal-secrets)
   - [Develop](#develop)
   - [Test](#test)
+  - [Storybook](#storybook)
   - [Document](#document)
     - [CHANGELOG.md](#changelogmd)
   - [Deploy](#deploy)
@@ -41,6 +42,7 @@ A service to record your Splatoon&reg;3 battles.
   - Stylelint
   - Jest
   - Playwright
+  - Storybook
 - Tailwind CSS v3+
 - [git-secret](https://git-secret.io)
 
@@ -49,15 +51,20 @@ A service to record your Splatoon&reg;3 battles.
 ```shell
 $ yarn run
 <snip>
-info Project commands
    - build
       next build
+   - build-storybook
+      build-storybook
+   - chromatic
+      npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
    - dev
       next dev
    - hide
       git secret hide
    - lint
-      next lint --fix --dir src
+      next lint --dir src
+   - lint:fix
+      yarn lint --fix
    - prepare
       husky install
    - prettier
@@ -66,6 +73,8 @@ info Project commands
       git secret reveal
    - start
       next start
+   - storybook
+      start-storybook -p 6006
    - stylelint
       stylelint --fix './**/*.{css,scss,sass}'
    - test
@@ -88,11 +97,21 @@ To hide secret files,  `yarn hide`.
 
 ### Develop
 
-(T. B. D.)
+`yarn dev` to start development server.
 
 ### Test
 
-(T. B. D.)
+To test using Jest, `yarn test:jest`.
+
+To test using Playwright, `yarn test:e2e`.
+
+To test both, `yarn test`.
+
+### Storybook
+
+Every time you push to GitHub, it is automatically deployed to Chromatic.
+
+`yarn storybook` to open Storybook manually.
 
 ### Document
 
@@ -102,7 +121,7 @@ To update CHANGELOG.md, `git cliff --unreleased --output CHANGELOG.md`.
 
 ### Deploy
 
-(T. B. D.)
+Every time you push to GitHub, it is automatically deployed to Vercel.
 
 ## Misc
 
