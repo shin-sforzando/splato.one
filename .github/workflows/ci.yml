@@ -25,10 +25,15 @@ jobs:
         run: yarn install
       - name: Install Playwright
         run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps
-      - name: Test
-        run: yarn test
+      - name: Test using Jest
+        run: yarn test:jest
+      - name: Test using Playwright
+        run: PLAYWRIGHT_BROWSERS_PATH=0 yarn test:e2e
       - name: Upload test results
         uses: actions/upload-artifact@v2
         with:
           name: playwright-report
-          path: __tests__/e2e/test-reports
+          path: |
+            __tests__/e2e/test-results
+            __tests__/e2e/test-reports
+          retention-days: 7
