@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home snapshot 1`] = `
+exports[`/ snapshot 1`] = `
 <div>
   <span
     class="text-3xl font-bold"

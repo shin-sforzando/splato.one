@@ -22,6 +22,11 @@ jobs:
           node-version: ${{ matrix.version }}
           cache: 'yarn'
       - name: Install dependencies
-        run: yarn install
+        run: PLAYWRIGHT_BROWSERS_PATH=0 yarn install
       - name: Test
         run: yarn test
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: playwright-report
+          path: __tests__/e2e/test-reports

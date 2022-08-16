@@ -11,8 +11,11 @@
     "lint": "next lint --fix --dir src",
     "prettier": "prettier --write './**/*.{js,jsx,ts,tsx,json}'",
     "stylelint": "stylelint --fix './**/*.{css,scss,sass}'",
-    "test": "jest",
+    "test": "yarn test:jest && yarn test:e2e",
+    "test:jest": "jest --updateSnapshot",
     "test:watch": "jest --watchAll",
+    "test:e2e": "playwright test",
+    "postinstall": "npx playwright install --with-deps",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -22,6 +25,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.25.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@types/node": "18.7.2",
