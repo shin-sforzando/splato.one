@@ -21,6 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.version }}
           cache: 'yarn'
+      - name: Install Japanese font
+        run: sudo apt install fonts-noto
       - name: Install dependencies
         run: PLAYWRIGHT_BROWSERS_PATH=0 yarn install
       - name: Install Playwright
