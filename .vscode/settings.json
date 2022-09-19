@@ -21,7 +21,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.words": [
+    "apikey",
     "chromaui",
+    "nextjs",
     "openapi",
     "Splato",
     "Splatoon",

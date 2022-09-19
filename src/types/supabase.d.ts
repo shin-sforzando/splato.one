@@ -12,6 +12,113 @@ export interface paths {
       }
     }
   }
+  '/test': {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters['rowFilter.test.id']
+          created_at?: parameters['rowFilter.test.created_at']
+          /** Filtering Columns */
+          select?: parameters['select']
+          /** Ordering */
+          order?: parameters['order']
+          /** Limiting and Pagination */
+          offset?: parameters['offset']
+          /** Limiting and Pagination */
+          limit?: parameters['limit']
+        }
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters['range']
+          /** Limiting and Pagination */
+          'Range-Unit'?: parameters['rangeUnit']
+          /** Preference */
+          Prefer?: parameters['preferCount']
+        }
+      }
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions['test'][]
+        }
+        /** Partial Content */
+        206: unknown
+      }
+    }
+    post: {
+      parameters: {
+        body: {
+          /** test */
+          test?: definitions['test']
+        }
+        query: {
+          /** Filtering Columns */
+          select?: parameters['select']
+        }
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn']
+        }
+      }
+      responses: {
+        /** Created */
+        201: unknown
+      }
+    }
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters['rowFilter.test.id']
+          created_at?: parameters['rowFilter.test.created_at']
+        }
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn']
+        }
+      }
+      responses: {
+        /** No Content */
+        204: never
+      }
+    }
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters['rowFilter.test.id']
+          created_at?: parameters['rowFilter.test.created_at']
+        }
+        body: {
+          /** test */
+          test?: definitions['test']
+        }
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn']
+        }
+      }
+      responses: {
+        /** No Content */
+        204: never
+      }
+    }
+  }
+}
+
+export interface definitions {
+  /** @description for Development */
+  test: {
+    /**
+     * Format: bigint
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    id: number
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    created_at?: string
+  }
 }
 
 export interface parameters {
@@ -47,6 +154,12 @@ export interface parameters {
   offset: string
   /** @description Limiting and Pagination */
   limit: string
+  /** @description test */
+  'body.test': definitions['test']
+  /** Format: bigint */
+  'rowFilter.test.id': string
+  /** Format: timestamp with time zone */
+  'rowFilter.test.created_at': string
 }
 
 export interface operations {}
