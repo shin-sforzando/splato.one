@@ -18,10 +18,14 @@
     "test:e2e": "playwright test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "gen-types": "npx openapi-typescript $NEXT_PUBLIC_SUPABASE_URL/rest/v1/?apikey=$NEXT_PUBLIC_SUPABASE_ANON_KEY --output src/types/supabase.d.ts",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@supabase/auth-helpers-nextjs": "^0.2.8",
+    "@supabase/auth-helpers-react": "^0.2.4",
+    "@supabase/supabase-js": "^1.35.6",
     "next": "12.3.0",
     "next-axiom": "^0.14.0",
     "react": "18.2.0",
