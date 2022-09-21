@@ -16,6 +16,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install git-secret
+        run: |
+          sudo sh -c "echo 'deb https://gitsecret.jfrog.io/artifactory/git-secret-deb git-secret main' >> /etc/apt/sources.list"
+          wget -qO - https://gitsecret.jfrog.io/artifactory/api/gpg/key/public | sudo apt-key add -
+          sudo apt-get update && sudo apt-get install -y git-secret && git-secret --version
+      - name: Reveal secrets
+        run: |
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --no-tty --import
+          git secret reveal -p "$GPG_SECRET_PASSPHRASE"
+        env:
+          GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+          GPG_SECRET_PASSPHRASE: ${{secrets.GPG_SECRET_PASSPHRASE}}
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
