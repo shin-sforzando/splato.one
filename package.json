@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "reveal": "git secret reveal",
-    "hide": "git secret hide",
+    "reveal": "git secret reveal -v",
+    "hide": "git secret hide -vm",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
