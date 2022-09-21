@@ -21,9 +21,14 @@ jobs:
           sudo sh -c "echo 'deb https://gitsecret.jfrog.io/artifactory/git-secret-deb git-secret main' >> /etc/apt/sources.list"
           wget -qO - https://gitsecret.jfrog.io/artifactory/api/gpg/key/public | sudo apt-key add -
           sudo apt-get update && sudo apt-get install -y git-secret && git-secret --version
+      - name: Import GPG key of dev@sforzando.co.jp
+        run: echo "$GPG_PRIVATE_KEY" | gpg --batch --no-tty --import
+        env:
+          GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+      - name: Who Knows
+        run: git secret whoknows
       - name: Reveal secrets
         run: |
-          echo "$GPG_PRIVATE_KEY" | gpg --batch --no-tty --import
           git secret reveal -p "$GPG_SECRET_PASSPHRASE"
         env:
           GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
