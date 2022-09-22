@@ -23,10 +23,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@lexical/react": "^0.4.1",
     "@supabase/auth-helpers-nextjs": "^0.2.8",
     "@supabase/auth-helpers-react": "^0.2.4",
     "@supabase/supabase-js": "^1.35.7",
     "@supabase/ui": "^0.36.5",
+    "lexical": "^0.4.1",
     "next": "12.3.1",
     "next-axiom": "^0.14.0",
     "react": "18.2.0",
