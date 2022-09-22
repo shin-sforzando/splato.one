@@ -1,5 +1,7 @@
 import { User, withPageAuth } from '@supabase/auth-helpers-nextjs'
 
+import Editor from '@/components/Editor'
+
 export const getServerSideProps = withPageAuth({
   redirectTo: '/login',
   // async getServerSideProps(ctx) {
@@ -12,6 +14,7 @@ const Sandbox = ({ user }: { user: User }) => {
   return (
     <>
       Sandbox w/ {user.email} ({user.id})
+      <Editor />
     </>
   )
 }
