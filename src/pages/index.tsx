@@ -2,6 +2,7 @@ import { supabaseClient } from '@supabase/auth-helpers-nextjs'
 import { useUser } from '@supabase/auth-helpers-react'
 import { Auth, Button, Typography } from '@supabase/ui'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { log } from 'next-axiom'
 import { useEffect, useState } from 'react'
 
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
   log.debug('Home')
   const { user, error } = useUser()
   const [data, setData] = useState<Test[]>()
+  const router = useRouter()
   useEffect(() => {
     async function loadTestData() {
       const { data }: any = await supabaseClient.from<Test>('test').select('*')
@@ -35,6 +37,9 @@ const Home: NextPage = () => {
       <Typography.Title level={1}>splato.one: {user ? user.id : null}</Typography.Title>
       <Button block onClick={() => supabaseClient.auth.signOut()}>
         Sign Out
+      </Button>
+      <Button block className='mt-5' onClick={() => router.push('/sandbox')}>
+        To Somewhere
       </Button>
       <ul>
         {data &&

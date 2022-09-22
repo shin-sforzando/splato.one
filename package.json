@@ -25,7 +25,7 @@
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.2.8",
     "@supabase/auth-helpers-react": "^0.2.4",
-    "@supabase/supabase-js": "^1.35.6",
+    "@supabase/supabase-js": "^1.35.7",
     "@supabase/ui": "^0.36.5",
     "next": "12.3.1",
     "next-axiom": "^0.14.0",
