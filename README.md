@@ -44,7 +44,6 @@ A service to record your Splatoon&reg;3 battles.
   - Playwright
   - Storybook
   - [Supabase](https://app.supabase.com/)
-- Tailwind CSS v3+
 - [git-secret](https://git-secret.io)
 
 ## How to

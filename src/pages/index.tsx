@@ -1,51 +1,38 @@
-import { supabaseClient } from '@supabase/auth-helpers-nextjs'
-import { useUser } from '@supabase/auth-helpers-react'
-import { Auth, Button, Typography } from '@supabase/ui'
-import type { NextPage } from 'next'
-import { log } from 'next-axiom'
+import { useSessionContext, useUser } from '@supabase/auth-helpers-react'
+import { Auth, ThemeMinimal } from '@supabase/auth-ui-react'
 import { useEffect, useState } from 'react'
 
-import { definitions } from '@/types/supabase'
+const LoginPage = () => {
+  const { error, supabaseClient } = useSessionContext()
+  const user = useUser()
+  const [data, setData] = useState()
 
-export type Test = definitions['test']
-
-const Home: NextPage = () => {
-  log.debug('Home')
-  const { user, error } = useUser()
-  const [data, setData] = useState<Test[]>()
   useEffect(() => {
-    async function loadTestData() {
-      const { data }: any = await supabaseClient.from<Test>('test').select('*')
+    async function loadData() {
+      const { data } = await supabaseClient.from('test').select('*')
       setData(data)
     }
-    if (user) loadTestData()
-  }, [user])
+    // Only run query once user is logged in.
+    if (user) loadData()
+  }, [supabaseClient, user])
 
-  if (!user) {
+  if (!user)
     return (
       <>
-        <Typography.Title level={1}>splato.one</Typography.Title>
-        <Auth supabaseClient={supabaseClient} />
-        {error && <Typography.Text type='danger'>{error.message}</Typography.Text>}
+        {error && <p>{error.message}</p>}
+        <Auth redirectTo='/' appearance={{ theme: ThemeMinimal }} supabaseClient={supabaseClient} />
       </>
     )
-  }
+
   return (
     <>
-      <Typography.Title level={1}>splato.one: {user ? user.id : null}</Typography.Title>
-      <Button block onClick={() => supabaseClient.auth.signOut()}>
-        Sign Out
-      </Button>
-      <ul>
-        {data &&
-          data.map((row: any) => (
-            <li key={row.id}>
-              {row.id}: {row.created_at}
-            </li>
-          ))}
-      </ul>
+      <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
+      <p>user:</p>
+      <pre>{JSON.stringify(user, null, 2)}</pre>
+      <p>client-side data fetching with RLS</p>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
   )
 }
 
-export default Home
+export default LoginPage

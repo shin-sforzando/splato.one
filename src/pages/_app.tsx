@@ -1,16 +1,17 @@
-import '@/styles/globals.css'
-
-import { supabaseClient } from '@supabase/auth-helpers-nextjs'
-import { UserProvider } from '@supabase/auth-helpers-react'
-import type { AppProps } from 'next/app'
-
-export { reportWebVitals } from 'next-axiom'
+import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter()
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient())
+
   return (
-    <UserProvider supabaseClient={supabaseClient}>
+    <SessionContextProvider supabaseClient={supabaseClient}>
       <Component {...pageProps} />
-    </UserProvider>
+    </SessionContextProvider>
   )
 }
 

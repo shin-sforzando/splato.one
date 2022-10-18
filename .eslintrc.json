@@ -7,11 +7,10 @@
     "next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:import/warnings",
-    "plugin:tailwindcss/recommended",
     "plugin:storybook/recommended",
     "prettier"
   ],
-  "plugins": ["simple-import-sort", "import", "tailwindcss"],
+  "plugins": ["simple-import-sort", "import"],
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
