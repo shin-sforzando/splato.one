@@ -34,6 +34,7 @@ A service to record your Splatoon&reg;3 battles.
 
 ## Prerequisites
 
+- [Supabase](https://app.supabase.com/)
 - Node.js
   - Next.js
     - [next-axiom](https://github.com/axiomhq/next-axiom) as **Logger**
@@ -43,7 +44,6 @@ A service to record your Splatoon&reg;3 battles.
   - Jest
   - Playwright
   - Storybook
-  - [Supabase](https://app.supabase.com/)
 - [git-secret](https://git-secret.io)
 
 ## How to
