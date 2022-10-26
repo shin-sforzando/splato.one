@@ -1,13 +1,13 @@
 // import { render } from '@testing-library/react'
 
-// import Home from '@/pages'
+// import HomePage from '@/app/HomePage'
 
 describe('/', () => {
   test('always should be truthy', () => {
     expect(true).toBeTruthy()
   })
   // test('snapshot', () => {
-  //   const { container } = render(<Home />)
+  //   const { container } = render(<HomePage />)
   //   expect(container).toMatchSnapshot()
   // })
 })
